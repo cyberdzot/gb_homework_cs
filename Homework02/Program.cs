@@ -18,7 +18,7 @@ Console.Write($"Вторая цифра: {GetSecondDigit(threeDigitNumber)}.");
 Задача 13.
 Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 */
-
+/*
 int GetCountDigits(int number)
 {
     int i = 0;
@@ -56,5 +56,24 @@ if (digit != -1)
     Console.Write($"Третья цифра введённого числа: {digit}.");
 else
     Console.Write("У введённого числа отсутствует третья цифра.");
-
+*/
 //------------------------------------------------------------------------
+/*
+Задача 15.
+Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+*/
+
+bool IsDayOff(int day)
+{
+    bool[] dayOff = new bool[7] { false, false, false, false, false, true, true };
+
+    return dayOff[day - 1];
+}
+
+Console.Write("Введите день недели: ");
+int number = Convert.ToInt32(Console.ReadLine());
+
+if (IsDayOff(number))
+    Console.Write($"Введённый день ({number}) является выходным.");
+else
+    Console.Write($"Введённый день ({number}) является рабочим.");
