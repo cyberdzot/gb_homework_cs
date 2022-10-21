@@ -32,7 +32,7 @@ else
 A (3,6,8); B (2,1,-7), -> 15.84
 A (7,-5, 0); B (1,-1,9) -> 11.53
  */
-
+/* 
 double GetDistanceFromPoints(int x1, int y1, int z1, int x2, int y2, int z2)
 {
     return Math.Round(Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2)), 2);
@@ -53,3 +53,25 @@ int bZ = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine($"Введены координаты: A(x:{aX}; y:{aY}; z:{aZ}) B(x:{bX}; y:{bY}; z:{bZ})...");
 Console.WriteLine($"Расстояние между точками A и B: {GetDistanceFromPoints(aX, aY, aZ, bX, bY, bZ)}.");
+ */
+//------------------------------------------------------------------------
+/* 
+Задача 23.
+Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+
+3 -> 1, 8, 27
+5 -> 1, 8, 27, 64, 125
+ */
+
+void OutConsoleNumbersInCube(int arg)
+{
+    for (int i = 1; i <= arg; i++)
+    {
+        Console.Write(Math.Pow(i, 3) + " ");
+    }
+}
+
+Console.Write("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+
+OutConsoleNumbersInCube(number);
