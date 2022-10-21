@@ -66,9 +66,7 @@ Console.WriteLine($"Расстояние между точками A и B: {GetD
 void OutConsoleNumbersInCube(int arg)
 {
     for (int i = 1; i <= arg; i++)
-    {
         Console.Write(Math.Pow(i, 3) + " ");
-    }
 }
 
 Console.Write("Введите число: ");
