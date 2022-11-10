@@ -30,7 +30,7 @@ Console.Write($"При возведении числа {numA} в степень 
 82 -> 10
 9012 -> 12
 */
-
+/* 
 int SumNumbers(int number)
 {
     string strNumber = Convert.ToString(number);
@@ -54,5 +54,35 @@ Console.Write("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
 Console.Write($"Сумма цифр в числе {number} равна {SumNumbers(number)}.");
-
+ */
 //------------------------------------------------------------------------
+/* 
+Задача 29:
+Напишите программу, которая задаёт массив из m элементов и выводит их на экран.
+*/
+
+int[] CreateArrayFromInput(int size)
+{
+    int[] array = new int[size];
+
+    for (int i = 0; i < size; i++)
+    {
+        Console.WriteLine($"Введите число в ячейку № {i}: ");
+        array[i] = Convert.ToInt32(Console.ReadLine());
+    }
+    Console.WriteLine($"Создан массив из {size} ячеек!");
+    return array;
+}
+
+void ShowArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+}
+
+
+Console.WriteLine("Укажите размер массива: ");
+int number = Convert.ToInt32(Console.ReadLine());
+
+int[] arrayInt = CreateArrayFromInput(number);
+ShowArray(arrayInt);
