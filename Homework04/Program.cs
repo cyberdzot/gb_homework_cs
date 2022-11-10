@@ -6,11 +6,11 @@
 /* 
 int CustomMathPow(int a, int b)
 {
-    int sum = 1;
+    int result = 1;
 
-    for (int i = 0; i < b; i++) sum *= a;
+    for (int i = 0; i < b; i++) result *= a;
 
-    return sum;
+    return result;
 }
 
 Console.Write("Введите число которое нужно возвести: ");
