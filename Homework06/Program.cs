@@ -1,5 +1,5 @@
 ﻿//--------------------------[ Методы ]---------------------------------
-
+/* 
 int GetNaturalNumbersCount(int numbersCount)
 {
     int naturCount = 0;
@@ -10,9 +10,22 @@ int GetNaturalNumbersCount(int numbersCount)
         if (number > 0) naturCount++;
     }
     return naturCount;
+} */
+
+
+string GetPointOfIntersection(double k1, double b1, double k2, double b2)
+{
+    if (k1 == k2)
+    {
+        if (b1 == b2)
+            return $"Прямые 'y = {k1}x + {b1}' и 'y = {k2}x + {b2}' совпадают!";
+
+        return $"Прямые 'y = {k1}x + {b1}' и 'y = {k2}x + {b2}' параллельны!";
+    }
+    double x = (b2 - b1) / (k1 - k2);
+    double y = k1 * x + b1;
+    return $"Прямые 'y = {k1}x + {b1}' и 'y = {k2}x + {b2}' пересекаются в точке ({x}; {y})";
 }
-
-
 //--------------------------[ Задачи ]------------------------------------
 /* 
 Задача 41:
@@ -29,26 +42,13 @@ if (natCount > 0)
 else
     Console.WriteLine("Натуральных чисел не найдено!");
  */
+//------------------------------------------------------------------------
 /* 
 Задача 43:
 Напишите программу, которая найдёт точку пересечения двух прямых,
 заданных уравнениями y = k1 * x + b1, y = k2 * x + b2;
 значения b1, k1, b2 и k2 задаются пользователем.
  */
-
-string GetPointOfIntersection(double k1, double b1, double k2, double b2)
-{
-    if (k1 == k2)
-    {
-        if (b1 == b2)
-            return $"Прямые 'y = {k1}x + {b1}' и 'y = {k2}x + {b2}' совпадают!";
-
-        return $"Прямые 'y = {k1}x + {b1}' и 'y = {k2}x + {b2}' параллельны!";
-    }
-    double x = (b2 - b1) / (k1 - k2);
-    double y = k1 * x + b1;
-    return $"Прямые 'y = {k1}x + {b1}' и 'y = {k2}x + {b2}' пересекаются в точке ({x}; {y})";
-}
 
 Console.Write("Введите k1: ");
 double k1 = Convert.ToDouble(Console.ReadLine());
