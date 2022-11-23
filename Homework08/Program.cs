@@ -1,4 +1,5 @@
 ﻿//--------------------------[ Методы ]---------------------------------
+/* 
 int[,] CreateRandom2dArrayInt(int rows, int columns, int minValue, int maxValue)
 {
     int[,] array = new int[rows, columns];
@@ -23,7 +24,7 @@ void Show2dArrayInt(int[,] array)
     }
     Console.WriteLine();
 }
-/* 
+
 void SwapInt(ref int arg1, ref int arg2)
 {
     int temp = arg1;
@@ -44,7 +45,7 @@ void Sort2dArrayRows(int[,] array) // пузырьковая
             }
         }
 }
- */
+
 int GetMinSumElementsRowInArray(int[,] array)
 {
     int countRows = array.GetLength(0);
@@ -60,8 +61,15 @@ int GetMinSumElementsRowInArray(int[,] array)
         if (sumRows[i] < sumRows[idMin]) idMin = i;
 
     return idMin + 1; // нам ведь нужна строка, а не индекс :)
-}
+} */
 
+void QuadMatrixMultiplication(int a1, int a2, int b1, int b2,
+                            int c1, int c2, int d1, int d2)
+{
+    Console.WriteLine("Результат произведения двух матриц: ");
+    Console.WriteLine($"|{a1 * c1 + b1 * c2} {a1 * d1 + b1 * d2}|");
+    Console.WriteLine($"|{a2 * c1 + b2 * c2} {a2 * d1 + b2 * d2}|\n");
+}
 //--------------------------[ Задачи ]------------------------------------
 /* 
 Задача 54:
@@ -87,7 +95,7 @@ Show2dArrayInt(randArray);
 Задайте прямоугольный двумерный массив.
 Напишите программу, которая будет находить строку с наименьшей суммой элементов.
  */
-
+/* 
 Console.Write("Введите количество строк: ");
 int inputRow = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите количество столбцов: ");
@@ -100,6 +108,43 @@ Show2dArrayInt(randArray);
 
 Console.Write("Номер строки с наименьшей суммой элементов: "
                 + GetMinSumElementsRowInArray(randArray));
+ */
+//------------------------------------------------------------------------
+/* 
+Задача 58:
+Задайте две матрицы.
+Напишите программу, которая будет находить произведение двух матриц.
+Например, даны 2 матрицы:
+2 4 | 3 4
+3 2 | 3 3
+Результирующая матрица будет:
+18 20
+15 18
+ */
+
+Console.WriteLine("Пусть матрицы выглядят так: \n");
+Console.WriteLine("|a1 b1| |c1 d1|");
+Console.WriteLine("|a2 b2| |c2 d2|\n");
+
+Console.Write("Введите a1: ");
+int a1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите a2: ");
+int a2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите b1: ");
+int b1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите b2: ");
+int b2 = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Введите c1: ");
+int c1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите c2: ");
+int c2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите d1: ");
+int d1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите d2: ");
+int d2 = Convert.ToInt32(Console.ReadLine());
+
+QuadMatrixMultiplication(a1, a2, b1, b2, c1, c2, d1, d2);
 
 //------------------------------------------------------------------------
 
